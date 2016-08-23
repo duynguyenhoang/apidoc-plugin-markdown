@@ -1,0 +1,46 @@
+
+{
+  "name": "apidoc-plugin-markdown",
+  "version": "1.0.0",
+  "description": "Inlude you markdown file into apiDescription block",
+  "author": "Duy Nguyen <nhduy88@gmail.com>",
+  "maintainers": [
+    {
+      "name": "Duy Nguyen",
+      "email": "nhduy88@gmail.com"
+    }
+  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/duynguyenhoang/apidoc-plugin-markdown/blob/master/LICENSE"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "parser"
+  ],
+  "homepage": "http://github.com/duynguyenhoang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duynguyenhoang/apidoc-plugin-markdown.git"
+  },
+  "scripts": {
+    "test": "npm run jshint && mocha test/",
+    "jshint": "jshint",
+    "build-example": "cd .. && apidoc-plugin-markdown/node_modules/apidoc/bin/apidoc -i apidoc-plugin-markdown/test/src/ -o apidoc-plugin-markdown/tmp/ --debug --verbose && cd apidoc-plugin-markdown",
+    "check-updates": "npm-check-updates"
+  },
+  "keywords": [
+    "apidoc",
+    "plugin",
+    "apidoc-plugin",
+    "markdown"
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "markdown": "0.5.*",
+    "trim": "0.0.1"
+  }
+}
