@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
-var markdown = require( "markdown" ).markdown;
+var marked = require('marked');
+
 var elementParser = require('./parser/api_schema');
 var app = {};
 
@@ -15,7 +16,7 @@ function parseMarkdownContent(elements, element, block, filename) {
     if (element.name === 'apimarkdown') {
         var values = elementParser.parse(element.content, element.source);
         var data = fs.readFileSync( path.join(path.dirname(filename), values.path), 'utf8').toString();
-        var htmlContent = markdown.toHTML(data);
+        var htmlContent = marked(data);
 
         var hasApiDescription = false;
         for(var i = 0, l = elements.length; i < l; i++) {
